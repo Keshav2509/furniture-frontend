@@ -1,7 +1,3 @@
-import React from 'react'
-
 export default function Products() {
-  return (
-    <div className='text-center text-2xl p-8'> Products page </div>
-  );
+  return <h1>Product page</h1>;
 }

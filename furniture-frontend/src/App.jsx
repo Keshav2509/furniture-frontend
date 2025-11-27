@@ -1,14 +1,13 @@
-import { BrowserRouter } from "react-router-dom";
-import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import AppRoutes from "./routes/AppRoutes";
-
-export default function App(){
+ function App(){
   return(
-    <BrowserRouter>
-      <Header/>
+    <>
+      <Navbar/>
       <main className="pt-6">
         <AppRoutes/>
-      </main> 
-    </BrowserRouter>
+      </main>
+    </>
   );
 }
+export default App;
