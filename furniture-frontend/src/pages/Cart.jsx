@@ -1,29 +1,28 @@
 import { useState } from "react";
 import { CartContext } from "../context/CartContext";
-
+import React,{ useContext } from "react";
 
 function Cart() {
-  const { cart } =useContext(CartContext);
+  const { cartItem } =useContext(CartContext);
 
-  const total = cart.reduce((sum,item) =>sum+item.price,o);
+  
 
   return(
-    <div style={{padding:"20px"}}>
-      <h2>Yoir Cart 🛒</h2>
+    <div className="p-6">
+      <h1 className="text-3xl font-bold mb-4">Yoir Cart 🛒</h1>
 
-      {cart.length ===0 ? (
-        <p>No item in Cart</p>
+      {cartItem.length ===0 ? (
+        <p>Your Cart is Empty.</p>
       ) : (
-        <div>
-        {cart.map((item,index) => (
-          <div key={index} style={{borderBottom:"1px solid #ccc",padding:"10px"}}>
-           <h3>{item.name}</h3>
-           <p>price: ₹{item.price}</p>
+        
+        cartItem.map((item,index) => (
+          <div key={index} className="flex item-center gap-4 mb-3 border p-3 rounded">
+           <img src={item.image} className="h-16"/>
+           <h3 className="font-semibold">{item.title}</h3>
+           <p>₹ {item.price}</p>
           </div>
-         ))}
-        <h2>Toatl:₹{total}</h2>
-       </div>
-  )}
+         ))
+      )}
   </div>
   );
 }

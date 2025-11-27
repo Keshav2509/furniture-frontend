@@ -1,10 +1,23 @@
+import { useContext } from "react";
+import {CartContext} from "../context/CartContext";
+
+
+
 export default function ProductCard({title,price,image}) {
+
+    const { addToCart }=useContext(CartContext);
+    const product={title,price,image};
+
+
     return (
-        <div className="border rounded-md p-4 shadow-md hover:scale-105 transition">
-            <img src={image} alt={title} className="h-40 w-fu;; object-cover rounded"/>
-            <h2 className="text-lg font-semibold mt-3">{title}</h2>
-            <p className="text-gray-700 mb-3">₹{price}</p>
-            <button className="bg-blue-600 tect-white px-4 py-2 rounded hover:bg-blue-700">
+        <div className="p-4 border rounded-lg text-center">
+            <img src={image}  className="h-40 mx-auto"/>
+            <h2 className="font-bold mt-2">{title}</h2>
+            <p>₹{price}</p>
+            <button 
+                onClick={() => addToCart(product)}
+                className="mt-2 border px-3 py-1"
+            >
                 Add to Cart 
                 </button>"
         </div>
