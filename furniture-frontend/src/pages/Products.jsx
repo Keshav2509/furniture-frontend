@@ -21,14 +21,14 @@ export default function Products() {
     },
     {
       id:2,
-      name:"",
+      name:"Dinning table",
       price:9999,
       image:study,
       description:"Best metirial Dinning Table."
     },
     {
       id:3,
-      name:"",
+      name:"study Chair",
       price:5999,
       image:dining,
       description:"Wooden Study Chair."
@@ -56,10 +56,11 @@ export default function Products() {
               <h3>{item.name}</h3>
               <p>₹ {item.price}</p>
               <p style={{ fontsize:"13px"}}>{item.description}</p>
+              <button onClick={() => addToCart(item)}>Add To Cart</button>
             </div>
         ))}
       </div>
-      <button onClick={() => addToCart(products)}>Add To Cart</button>
+      
     </div>
   );
 }

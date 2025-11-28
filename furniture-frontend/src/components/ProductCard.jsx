@@ -16,10 +16,8 @@ export default function ProductCard({title,price,image}) {
             <p>₹{price}</p>
             <button 
                 onClick={() => addToCart(product)}
-                className="mt-2 border px-3 py-1"
-            >
-                Add to Cart 
-                </button>"
+                className="mt-2 border px-3 py-1"> Add to Cart 
+                </button>
         </div>
     );
 }
