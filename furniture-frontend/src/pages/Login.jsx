@@ -32,6 +32,7 @@ import React , { useState } from 'react';
           required
           style={{width:"90%",padding:"10px",marginBottom:"10px"}}
         />
+        <lable>Password</lable>
         <input 
           type='password'
           value={password}

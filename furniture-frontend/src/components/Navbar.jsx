@@ -8,7 +8,8 @@ export default function Navbar() {
             <Link to="/" style={{marginRight:"20px"}}>Home</Link>
             <Link to="/products" style={{marginRight:"20px"}}>Products</Link>
             <Link to="/cart" style={{marginRight:"20px"}}>Cart</Link>
-            <Link to="/login" >Login</Link>
+            <Link to="/login" style={{marginRight:"20px"}} >Login</Link>
+            <Link to="/orders">Orders</Link>
         </nav>
 
     );
