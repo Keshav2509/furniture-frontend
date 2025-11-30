@@ -21,6 +21,7 @@ function AppRoutes() {
             <Route path="/checkout" element={<Checkout/>}/>
             <Route path="/order-success" element={<OrderSuccess/>}/>
             <Route path='/orders' element={<Orders/>}/>
+            
         </Routes>
       
         );
