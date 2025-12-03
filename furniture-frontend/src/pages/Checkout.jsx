@@ -9,13 +9,14 @@ export default function Checkout() {
     
     
     const{ cart ,clearCart} = useContext(CartContext);
-    const [form,setForm] = useState({ name:"",phone:"",address:""});
+    const [form,setForm] = useState({ name:"",phone:"",address:"",paymentMode:""});
 
     const total = cart.reduce((acc, item)=> acc +item.price*item.quantity,0);
     const handleSubmit =(e) => {
         e.preventDefault();
+  
         const order = {
-         id:ORD +Date.now(),
+         id:"ORD" +Date.now(),
             ...form,
             cart,
             total,
@@ -64,7 +65,7 @@ export default function Checkout() {
                 onChange={(e) => setForm({...form,paymentMode:e.target.value})}
             >
                 <option value="">select payment  mode</option>
-                <option valur="COD">Cash on delivery</option>
+                <option value="COD">Cash on delivery</option>
                 <option value="Online">Online payment</option>
             </select>
             
